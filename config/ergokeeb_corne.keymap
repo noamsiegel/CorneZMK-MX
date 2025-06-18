@@ -75,7 +75,7 @@
         compatible = "zmk,keymap";
 
         LETTERS {
-            display-name = "QWERTY";
+            display-name = "LETTERS";
             bindings = <
 &kp TILDE   &kp Q                &kp W            &kp E                &kp R              &kp T                       &none         &kp Y         &kp U               &kp I                 &kp O             &kp P                    &kp BSPC
 &kp ESCAPE  &HRM LEFT_COMMAND A  &HRM LEFT_ALT R  &HRM LEFT_CONTROL S  &HRM LEFT_SHIFT T  &kp G                &none  &none  &none  &kp H         &HRM RIGHT_SHIFT J  &HRM RIGHT_CONTROL K  &HRM RIGHT_ALT L  &HRM RIGHT_COMMAND SEMI  &kp SQT
@@ -91,6 +91,8 @@
 &trans  &trans    &trans    &trans     &trans     &trans  &trans            &trans          &kp HOME   &kp PAGE_DOWN  &kp PAGE_UP   &kp END    &kp INSERT    &trans
                             &trans     &trans     &trans                                    &kp ENTER  &kp BSPC       &kp DELETE
             >;
+
+            label = "NAV";
         };
 
         MOUSE {
@@ -100,6 +102,8 @@
 &none  &none     &none     &none      &none      &none  &none           &none         &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none       &none
                            &none      &none      &none                                &mkp RCLK       &mkp LCLK       &mkp MCLK
             >;
+
+            label = "MOUSE";
         };
 
         MEDIA {
@@ -109,6 +113,8 @@
 &none  &none             &none         &none             &none           &none  &none           &none         &bt BT_SEL 0    &bt BT_SEL 1       &bt BT_SEL 2     &bt BT_SEL 3  &bt BT_CLR  &bt BT_CLR_ALL
                                        &none             &none           &none                                &kp C_PAUSE     &kp C_PLAY_PAUSE   &kp K_MUTE
             >;
+
+            label = "MEDIA";
         };
 
         NUMS {
@@ -118,6 +124,8 @@
 &none  &kp GRAVE  &kp N7  &kp N8   &kp N9  &kp BSLH   &none           &none         &none  &none      &none      &none     &none     &none
                           &kp DOT  &kp N0  &kp MINUS                                &none  &none      &none
             >;
+
+            label = "NUMS";
         };
 
         SYMB {
@@ -127,6 +135,8 @@
 &none  &kp TILDE       &kp AMPERSAND    &kp ASTERISK          &kp LEFT_PARENTHESIS   &kp PIPE         &none           &none         &none  &none      &none      &none     &none     &none
                                         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE                                 &none  &none      &none
             >;
+
+            label = "SYMB";
         };
 
         FUNC {
@@ -136,6 +146,8 @@
 &none  &kp F12  &kp F7  &kp F8  &kp F9  &none  &none           &none         &none  &none      &none      &none     &none     &none
                         &none   &none   &none                                &none  &none      &none
             >;
+
+            label = "FUNC";
         };
 
         BUTTON {
@@ -145,6 +157,8 @@
 &none  &kp K_UNDO  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &kp K_REDO  &none           &none         &kp K_REDO  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp K_UNDO  &none
                               &mkp MCLK   &mkp LCLK    &mkp RCLK                                 &mkp RCLK   &mkp LCLK    &mkp MCLK
             >;
+
+            label = "BUTTON";
         };
 
         lower_layer {
