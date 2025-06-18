@@ -64,16 +64,70 @@
         LETTERS {
             display-name = "QWERTY";
             bindings = <
-&kp TAB    &kp Q                &kp W            &kp E                &kp R              &kp T                               &kp UP                &kp Y        &kp U               &kp I                 &kp O             &kp P                    &kp BSPC
-&td0       &HRM LEFT_COMMAND A  &HRM LEFT_ALT R  &HRM LEFT_CONTROL S  &HRM LEFT_SHIFT T  &kp G                     &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &HRM RIGHT_SHIFT J  &HRM RIGHT_CONTROL K  &HRM RIGHT_ALT L  &HRM RIGHT_COMMAND SEMI  &kp SQT
-&kp LCTRL  &kp Z                &kp X            &kp C                &kp V              &kp B        &kp SPACE              &kp DOWN              &kp N        &kp M               &kp COMMA             &kp DOT           &kp FSLH                 &kp ESC
-                                                 &kp LGUI             &mo 2              &lt 4 SPACE                                               &lt 4 ENTER  &mo 3               &kp RALT
+&kp TAB    &kp Q                &kp W            &kp E                &kp R              &kp T                                &kp UP                &kp Y         &kp U               &kp I                 &kp O             &kp P                    &kp BSPC
+&td0       &HRM LEFT_COMMAND A  &HRM LEFT_ALT R  &HRM LEFT_CONTROL S  &HRM LEFT_SHIFT T  &kp G                      &kp LEFT  &kp ENTER  &kp RIGHT  &kp H         &HRM RIGHT_SHIFT J  &HRM RIGHT_CONTROL K  &HRM RIGHT_ALT L  &HRM RIGHT_COMMAND SEMI  &kp SQT
+&kp LCTRL  &kp Z                &kp X            &kp C                &kp V              &kp B         &kp SPACE              &kp DOWN              &kp N         &kp M               &kp COMMA             &kp DOT           &kp FSLH                 &kp ESC
+                                                 &kp LGUI             &mo 8              &lt 10 SPACE                                               &lt 10 ENTER  &mo 9               &kp RALT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         NAV {
+            bindings = <
+&trans  &trans    &trans    &trans     &trans     &trans                    &trans          &trans     &trans         &trans        &trans     &trans        &trans
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans            &trans  &trans  &trans  &kp LEFT   &kp DOWN       &kp UP_ARROW  &kp RIGHT  &kp CAPSLOCK  &trans
+&trans  &trans    &trans    &trans     &trans     &trans  &trans            &trans          &kp HOME   &kp PAGE_DOWN  &kp PAGE_UP   &kp END    &kp INSERT    &trans
+                            &trans     &trans     &trans                                    &kp ENTER  &kp BSPC       &kp DELETE
+            >;
+        };
+
+        MOUSE {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans                                    &trans  &trans  &trans
+            >;
+        };
+
+        BUTTON {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans                                    &trans  &trans  &trans
+            >;
+        };
+
+        MEDIA {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans                                    &trans  &trans  &trans
+            >;
+        };
+
+        NUMS {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans                                    &trans  &trans  &trans
+            >;
+        };
+
+        SYMB {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans                                    &trans  &trans  &trans
+            >;
+        };
+
+        FUNC {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
