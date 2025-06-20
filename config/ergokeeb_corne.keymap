@@ -78,7 +78,7 @@
             display-name = "LETTERS";
             bindings = <
 &kp TILDE   &kp Q                &kp W            &kp E                &kp R              &kp T                       &none         &kp Y         &kp U               &kp I                 &kp O             &kp P                    &kp BSPC
-&kp ESCAPE  &HRM LEFT_COMMAND A  &HRM LEFT_ALT R  &HRM LEFT_CONTROL S  &HRM LEFT_SHIFT T  &kp G                &none  &none  &none  &kp H         &HRM RIGHT_SHIFT J  &HRM RIGHT_CONTROL K  &HRM RIGHT_ALT L  &HRM RIGHT_COMMAND SEMI  &kp SQT
+&kp ESCAPE  &HRM LEFT_COMMAND A  &HRM LEFT_ALT S  &HRM LEFT_CONTROL D  &HRM LEFT_SHIFT F  &kp G                &none  &none  &none  &kp H         &HRM RIGHT_SHIFT J  &HRM RIGHT_CONTROL K  &HRM RIGHT_ALT L  &HRM RIGHT_COMMAND SEMI  &kp SQT
 &kp TAB     &kp Z                &kp X            &kp C                &kp V              &kp B       &none           &none         &kp N         &kp M               &kp COMMA             &kp DOT           &kp FSLH                 &kp ESC
                                                   &TCM 3 ESCAPE        &TCM 1 SPACE       &TCM 2 TAB                                &TCM 5 ENTER  &TCM 4 BACKSPACE    &TCM 6 DELETE
             >;
