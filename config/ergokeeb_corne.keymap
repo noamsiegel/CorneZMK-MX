@@ -108,9 +108,9 @@
 
         DISPLAY {
             bindings = <
-&none  &none     &none     &none      &none      &none                  &none         &kp LC(LG(LEFT_ARROW))  &kp LC(LG(DOWN))          &kp LC(LG(UP_ARROW))       &kp LC(LG(RIGHT_ARROW))  &none  &none
-&none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none           &none  &none  &none  &kp LG(GRAVE)           &kp LA(LS(LEFT_BRACKET))  &kp LA(LS(RIGHT_BRACKET))  &kp LG(TAB)              &none  &none
-&none  &none     &none     &none      &none      &none  &none           &none         &bl BL_TOG              &kp C_BRIGHTNESS_DEC      &kp C_BRIGHTNESS_INC       &bl BL_SET 100           &none  &none
+&none  &none     &none     &none      &none      &none                  &none         &kp LC(LG(LEFT_ARROW))  &kp LC(LG(DOWN))          &kp LC(LG(UP_ARROW))       &kp LC(LG(RIGHT_ARROW))  &none                         &none
+&none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none           &none  &none  &none  &kp LG(GRAVE)           &kp LA(LS(LEFT_BRACKET))  &kp LA(LS(RIGHT_BRACKET))  &kp LG(TAB)              &kp LA(LG(LC(LS(UP_ARROW))))  &none
+&none  &none     &none     &none      &none      &none  &none           &none         &bl BL_TOG              &kp C_BRIGHTNESS_DEC      &kp C_BRIGHTNESS_INC       &bl BL_SET 100           &none                         &none
                            &none      &none      &none                                &none                   &none                     &none
             >;
 
