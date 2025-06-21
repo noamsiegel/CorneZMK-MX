@@ -32,9 +32,9 @@
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
 
-        HRM: HRM {
+        KPM: KPM {
             compatible = "zmk,behavior-hold-tap";
-            label = "HRM";
+            label = "Key Press Mod";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -44,15 +44,15 @@
             hold-trigger-key-positions = <14 16 15 17 23 24 25 26 45 46 47 44 43 42 13 27>;
         };
 
-        TCM: TCM {
+        MLM: MLM {
             compatible = "zmk,behavior-hold-tap";
-            label = "TCM";
+            label = "Momentary Layer Mod";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
-            hold-trigger-key-positions = <42 43 44 45 46 46 47>;
+            hold-trigger-key-positions = <42 43 44 45 46 46 47 13 27>;
             flavor = "tap-preferred";
         };
     };
@@ -77,11 +77,22 @@
         LETTERS {
             display-name = "LETTERS";
             bindings = <
-&kp TILDE   &kp Q                &kp W            &kp E                &kp R              &kp T                       &none         &kp Y         &kp U               &kp I                 &kp O             &kp P                    &kp BSPC
-&kp ESCAPE  &HRM LEFT_COMMAND A  &HRM LEFT_ALT S  &HRM LEFT_CONTROL D  &HRM LEFT_SHIFT F  &kp G                &none  &none  &none  &kp H         &HRM RIGHT_SHIFT J  &HRM RIGHT_CONTROL K  &HRM RIGHT_ALT L  &HRM RIGHT_COMMAND SEMI  &kp SQT
-&kp TAB     &kp Z                &kp X            &kp C                &kp V              &kp B       &none           &none         &kp N         &kp M               &kp COMMA             &kp DOT           &kp FSLH                 &kp ESC
-                                                  &TCM 3 ESCAPE        &TCM 1 SPACE       &TCM 2 TAB                                &TCM 5 ENTER  &TCM 4 BACKSPACE    &TCM 6 DELETE
+&kp TILDE      &kp Q                &kp W            &kp E                &kp R              &kp T                       &none         &kp Y         &kp U               &kp I                 &kp O             &kp P                    &kp BSPC
+&MLM 5 ESCAPE  &KPM LEFT_COMMAND A  &KPM LEFT_ALT S  &KPM LEFT_CONTROL D  &KPM LEFT_SHIFT F  &kp G                &none  &none  &none  &kp H         &KPM RIGHT_SHIFT J  &KPM RIGHT_CONTROL K  &KPM RIGHT_ALT L  &KPM RIGHT_COMMAND SEMI  &kp SQT
+&kp TAB        &kp Z                &kp X            &kp C                &kp V              &kp B       &none           &none         &kp N         &kp M               &kp COMMA             &kp DOT           &kp FSLH                 &kp ESC
+                                                     &MLM 1 ESCAPE        &MLM 2 SPACE       &MLM 3 TAB                                &MLM 4 ENTER  &MLM 6 BACKSPACE    &MLM 7 DELETE
             >;
+        };
+
+        MEDIA {
+            bindings = <
+&none  &none             &none         &none             &none           &none                  &none         &rgb_ug RGB_TOG  &rgb_ug RGB_BRD    &rgb_ug RGB_BRI  &rgb_ug RGB_EFF  &none       &none
+&none  &kp LEFT_COMMAND  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none           &none  &none  &none  &kp C_PREVIOUS   &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_NEXT       &none       &none
+&none  &none             &none         &none             &none           &none  &none           &none         &bt BT_SEL 0     &bt BT_SEL 1       &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_CLR  &bt BT_CLR_ALL
+                                       &none             &none           &none                                &kp C_PAUSE      &kp C_PLAY_PAUSE   &kp K_MUTE
+            >;
+
+            label = "MEDIA";
         };
 
         NAV {
@@ -95,37 +106,15 @@
             label = "NAV";
         };
 
-        MOUSE {
+        DISPLAY {
             bindings = <
-&none  &none     &none     &none      &none      &none                  &none         &kp K_REDO      &kp K_PASTE     &kp K_COPY    &kp K_CUT        &kp K_UNDO  &none
-&none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none           &none  &none  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none       &none
-&none  &none     &none     &none      &none      &none  &none           &none         &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none       &none
-                           &none      &none      &none                                &mkp RCLK       &mkp LCLK       &mkp MCLK
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans          &kp LC(LG(LEFT_ARROW))  &kp LC(LG(DOWN))          &kp LC(LG(UP_ARROW))       &kp LC(LG(RIGHT_ARROW))  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans                  &kp LA(LS(LEFT_BRACKET))  &kp LA(LS(RIGHT_BRACKET))  &trans                   &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans            &trans          &bl BL_TOG              &kp C_BRIGHTNESS_DEC      &kp C_BRIGHTNESS_INC       &bl BL_SET 100           &trans  &trans
+                        &trans  &trans  &trans                                    &trans                  &trans                    &trans
             >;
 
-            label = "MOUSE";
-        };
-
-        MEDIA {
-            bindings = <
-&none           &none             &none         &bl BL_CYCLE      &bl BL_TOG      &none                         &none         &rgb_ug RGB_TOG  &rgb_ug RGB_BRD       &rgb_ug RGB_BRI       &rgb_ug RGB_EFF  &none  &none
-&none           &kp LEFT_COMMAND  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &none                  &none  &none  &none  &kp C_PREVIOUS   &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp C_NEXT       &none  &none
-&bt BT_CLR_ALL  &bt BT_CLR        &bt BT_SEL 3  &bt BT_SEL 2      &bt BT_SEL 1    &bt BT_SEL 0  &none           &none         &none            &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &none            &none  &none
-                                                &none             &none           &none                                       &kp C_PAUSE      &kp C_PLAY_PAUSE      &kp K_MUTE
-            >;
-
-            label = "MEDIA";
-        };
-
-        NUMS {
-            bindings = <
-&none  &kp LBKT   &kp N1  &kp N2   &kp N3  &kp RBKT                   &none         &none  &none      &none      &none     &none     &none
-&none  &kp SEMI   &kp N4  &kp N5   &kp N6  &kp EQUAL           &none  &none  &none  &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
-&none  &kp GRAVE  &kp N7  &kp N8   &kp N9  &kp BSLH   &none           &none         &none  &none      &none      &none     &none     &none
-                          &kp DOT  &kp N0  &kp MINUS                                &none  &none      &none
-            >;
-
-            label = "NUMS";
+            label = "DISPLAY";
         };
 
         SYMB {
@@ -137,6 +126,28 @@
             >;
 
             label = "SYMB";
+        };
+
+        MOUSE {
+            bindings = <
+&none  &none     &none     &none      &none      &none                  &none         &kp K_REDO      &kp K_PASTE     &kp K_COPY    &kp K_CUT        &kp K_UNDO  &none
+&none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none           &none  &none  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none       &none
+&none  &none     &none     &none      &none      &none  &none           &none         &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none       &none
+                           &none      &none      &none                                &mkp RCLK       &mkp LCLK       &mkp MCLK
+            >;
+
+            label = "MOUSE";
+        };
+
+        NUMS {
+            bindings = <
+&none  &kp LBKT   &kp N1  &kp N2   &kp N3  &kp RBKT                   &none         &none  &none      &none      &none     &none     &none
+&none  &kp SEMI   &kp N4  &kp N5   &kp N6  &kp EQUAL           &none  &none  &none  &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
+&none  &kp GRAVE  &kp N7  &kp N8   &kp N9  &kp BSLH   &none           &none         &none  &none      &none      &none     &none     &none
+                          &kp DOT  &kp N0  &kp MINUS                                &none  &none      &none
+            >;
+
+            label = "NUMS";
         };
 
         FUNC {
